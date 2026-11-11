@@ -1,31 +1,49 @@
+
 export default function LoginPage() {
   return (
-    <main dir="rtl" style={{
-      minHeight: "100vh",
-      background: "#080d19",
-      color: "white",
-      fontFamily: "Arial",
-      padding: "40px 20px",
-      textAlign: "center"
-    }}>
-      <h1>MOHAMMED AI</h1>
-      <h2>ربط حساب TikTok</h2>
-      <p style={{color:"#aab4c8"}}>
-        اربط حسابك لإدارة المحتوى ونشر الفيديوهات.
+    <main
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        background: "#080d18",
+        color: "white",
+        fontFamily: "Arial, sans-serif",
+        padding: "24px",
+        textAlign: "center"
+      }}
+    >
+      <h1 style={{ fontSize: "32px", marginBottom: "10px" }}>
+        MOHAMMED AI
+      </h1>
+
+      <h2 style={{ fontSize: "23px" }}>
+        ربط حساب TikTok
+      </h2>
+
+      <p style={{ color: "#b8c1d1", lineHeight: "1.8" }}>
+        اربط حسابك لإدارة المحتوى والفيديوهات.
       </p>
 
-      <button style={{
-        background: "#fe2c55",
-        color: "white",
-        border: "none",
-        borderRadius: "10px",
-        padding: "16px 28px",
-        fontSize: "17px"
-      }}>
+      <a
+        href="/api/oauth"
+        style={{
+          display: "inline-block",
+          background: "#fe2c55",
+          color: "white",
+          padding: "16px 28px",
+          borderRadius: "10px",
+          textDecoration: "none",
+          fontWeight: "bold",
+          marginTop: "20px"
+        }}
+      >
         تسجيل الدخول باستخدام TikTok
-      </button>
+      </a>
 
-      <p style={{color:"#64748b", marginTop:"30px"}}>
+      <p style={{ marginTop: "50px", color: "#777" }}>
         Mohammed AI Studio © 2026
       </p>
     </main>
