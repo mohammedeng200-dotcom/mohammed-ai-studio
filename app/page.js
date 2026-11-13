@@ -1,4 +1,11 @@
+
+"use client";
+
+import { useState } from "react";
+
 export default function Home() {
+  const [connecting, setConnecting] = useState(false);
+
   return (
     <main dir="rtl" style={{
       minHeight: "100vh",
@@ -20,28 +27,73 @@ export default function Home() {
 
       <section style={{
         maxWidth: "1000px",
-        margin: "90px auto",
+        margin: "65px auto",
         textAlign: "center"
       }}>
         <p style={{color:"#38bdf8"}}>YOUR AI CREATIVE STUDIO</p>
+
         <h1 style={{fontSize:"42px"}}>
           اصنع محتواك بقوة الذكاء الاصطناعي
         </h1>
+
         <p style={{color:"#aab4c8", lineHeight:"2"}}>
           منصتك الذكية لإنشاء الفيديوهات وإدارة المحتوى
           وربط حسابات التواصل الاجتماعي من مكان واحد.
         </p>
 
+        <section style={{
+          background:"#131d30",
+          border:"1px solid #26344d",
+          borderRadius:"20px",
+          padding:"30px 20px",
+          marginTop:"45px"
+        }}>
+          <div style={{fontSize:"42px"}}>📱</div>
+          <h2>ربط حساب TikTok</h2>
+          <p style={{color:"#aab4c8"}}>
+            اربط حسابك وابدأ بإدارة محتواك من Mohammed AI Studio
+          </p>
+
+          <button
+            onClick={() => {
+              setConnecting(true);
+              window.location.href = "/api/oauth";
+            }}
+            disabled={connecting}
+            style={{
+              background:"#38bdf8",
+              color:"#080d19",
+              border:"none",
+              borderRadius:"12px",
+              padding:"15px 35px",
+              fontSize:"17px",
+              fontWeight:"bold",
+              cursor:"pointer",
+              marginTop:"15px"
+            }}
+          >
+            {connecting ? "جارٍ الانتقال إلى TikTok..." : "Connect TikTok"}
+          </button>
+
+          <p style={{
+            color:"#94a3b8",
+            fontSize:"13px",
+            marginTop:"18px"
+          }}>
+            تسجيل دخول آمن عبر TikTok Login Kit
+          </p>
+        </section>
+
         <div style={{
           display:"grid",
           gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))",
           gap:"18px",
-          marginTop:"50px"
+          marginTop:"35px"
         }}>
           {[
             ["🎬","إنشاء الفيديوهات","حوّل أفكارك إلى محتوى مرئي"],
             ["🤖","المساعد الذكي","خطط واكتب محتواك بالذكاء الاصطناعي"],
-            ["📱","إدارة TikTok","إدارة محتوى حسابك ونشر الفيديوهات"],
+            ["📱","إدارة TikTok","إدارة محتوى حسابك"],
             ["📊","لوحة التحكم","تابع مشاريعك ومحتواك"]
           ].map((item) => (
             <div key={item[1]} style={{
@@ -56,6 +108,7 @@ export default function Home() {
             </div>
           ))}
         </div>
+
         <p style={{color:"#64748b",marginTop:"70px"}}>
           Mohammed AI Studio © 2026
         </p>
